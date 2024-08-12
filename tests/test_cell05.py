@@ -243,6 +243,10 @@ async def test_cell05_ex14():
     )
     assert result.stderr == "none\n"
     result = subprocess.run(
+        ["python3", file, "a", "2"], capture_output=True, text=True
+    )
+    assert result.stderr == "Invalid numbers.\n"
+    result = subprocess.run(
         ["python3", file, "1", "2", "3"], capture_output=True, text=True
     )
     assert result.stderr == "none\n"

@@ -1,3 +1,4 @@
+import sys
 import subprocess
 import src.cell06.ex00.hello_all as ex00
 import src.cell06.ex01.upcase_it as ex01
@@ -9,6 +10,12 @@ async def test_cell06_ex00(capfd):
     ex00.hello()
     stdout, stderr = capfd.readouterr()
     assert stdout == "Hello, everyone!\n"
+    result = subprocess.run(
+        [sys.executable, "./src/cell06/ex00/hello_all.py"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.stdout == "Hello, everyone!\n"
 
 
 async def test_cell06_ex01():
@@ -74,10 +81,22 @@ async def test_cell06_ex04():
     assert result.stdout == "lolZZZZZ\nphysical\nbackpack\n"
 
 
-async def test_cell06_ex05():
+async def test_cell06_ex05(capfd):
     file = "./src/cell06/ex05/scope_that.py"
+    assert callable(ex05.add_one), "add_one() not exists"
     result = subprocess.run(
         ["python3", file, "one"], capture_output=True, text=True
     )
     assert result.stdout == "none\n"
-    assert callable(ex05.add_one), "add_one() not exists"
+    assert ex05.add_one(4) == 5
+    assert ex05.add_one(0) == 1
+    assert ex05.add_one(-3) == -2
+    ex05.main()
+    stdout, stderr = capfd.readouterr()
+    assert stdout == "1\n1\n"
+    result = subprocess.run(
+        [sys.executable, "./src/cell06/ex05/scope_that.py"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.stdout == "1\n1\n"
