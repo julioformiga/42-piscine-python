@@ -9,8 +9,7 @@ readme = "README.md"
 license = { text = "MIT" }
 
 [tool.pytest.ini_options]
-pythonpaths = ["src"]
-addopts = "-p no:warnings"
+addopts = "--cov=src --cov-report=term-missing --cov-report=html"
 
 [tool.ruff]
 line-length = 79
@@ -20,7 +19,7 @@ target-version = "py312"
 distribution = false
 
 [tool.pdm.dev-dependencies]
-dev = ["pytest-cov>=5.0.0", "pytest-sugar>=1.0.0"]
+dev = ["pytest-cov>=5.0.0", "pytest-sugar>=1.0.0", "pytest-aio>=1.5.0"]
 
 [tool.poetry]
 name = "42-piscine-python"
