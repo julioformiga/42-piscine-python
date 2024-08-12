@@ -9,7 +9,7 @@ import pytest
         ("Scuola 42 Firenze", "SCUOLA 42 FIRENZE\n"),
     ],
 )
-def test_cell04_ex00(input, expected):
+async def test_cell04_ex00(input, expected):
     file = "./src/cell04/ex00/upcase_it.py"
     result = subprocess.run(
         ["python3", file],
@@ -28,7 +28,7 @@ def test_cell04_ex00(input, expected):
         ("Wil", "This input is not a int number.\n"),
     ],
 )
-def test_cell04_ex01(input, expected):
+async def test_cell04_ex01(input, expected):
     file = "./src/cell04/ex01/age.py"
     result = subprocess.run(
         ["python3", file],
@@ -59,7 +59,7 @@ def test_cell04_ex01(input, expected):
         ("2", "a", "This input is not a number.\n"),
     ],
 )
-def test_cell04_ex02(input1, input2, expected):
+async def test_cell04_ex02(input1, input2, expected):
     file = "./src/cell04/ex02/calculator.py"
     result = subprocess.run(
         ["python3", file],
@@ -96,7 +96,7 @@ def test_cell04_ex02(input1, input2, expected):
         ("42.41", "This number is a decimal.\n"),
     ],
 )
-def test_cell04_ex03(input, expected):
+async def test_cell04_ex03(input, expected):
     file = "./src/cell04/ex03/float.py"
     result = subprocess.run(
         ["python3", file],
@@ -121,7 +121,7 @@ def test_cell04_ex03(input, expected):
         ("42.41", "43\n"),
     ],
 )
-def test_cell04_ex04(input, expected):
+async def test_cell04_ex04(input, expected):
     file = "./src/cell04/ex04/round_up.py"
     result = subprocess.run(
         ["python3", file],
@@ -142,7 +142,7 @@ def test_cell04_ex04(input, expected):
         ("42 Firenze"),
     ],
 )
-def test_cell04_ex05(input):
+async def test_cell04_ex05(input):
     file = "./src/cell04/ex05/up_low.py"
     result = subprocess.run(
         ["python3", file],

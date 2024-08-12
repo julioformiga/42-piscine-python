@@ -4,7 +4,7 @@ import src.cell07.ex02.help_your_professor as ex02
 import src.cell07.ex03.persons_of_interest as ex03
 
 
-def test_cell07_ex00():
+async def test_cell07_ex00():
     assert callable(ex00.array_of_names)
     persons = {"jean": "valjean"}
     assert ex00.array_of_names(persons) == ["Jean Valjean"]
@@ -22,7 +22,7 @@ def test_cell07_ex00():
     ]
 
 
-def test_cell07_ex01():
+async def test_cell07_ex01():
     assert callable(ex01.find_the_redheads)
     dupont_family = {
         "florian": "red",
@@ -46,7 +46,7 @@ def test_cell07_ex01():
     ]
 
 
-def test_cell07_ex02():
+async def test_cell07_ex02():
     assert callable(ex02.average)
     class_3B = {"marine": 18, "jean": 15, "coline": 8, "luc": 9}
     assert ex02.average(class_3B) == 12.5
@@ -54,7 +54,7 @@ def test_cell07_ex02():
     assert ex02.average(class_3C) == 13.25
 
 
-def test_cell07_ex03(capsys):
+async def test_cell07_ex03(capsys):
     assert callable(ex03.famous_births)
 
     women_scientists = {

@@ -10,7 +10,7 @@ import pytest
         ("Wil", "This input is not a number.\n"),
     ],
 )
-def test_cell02_ex00(input, expected):
+async def test_cell02_ex00(input, expected):
     file = "./src/cell02/ex00/iszero.py"
     result = subprocess.run(
         ["python3", file],
@@ -33,7 +33,7 @@ def test_cell02_ex00(input, expected):
         ("Wil", "This input is not a number.\n"),
     ],
 )
-def test_cell02_ex01(input, expected):
+async def test_cell02_ex01(input, expected):
     file = "./src/cell02/ex01/isneg.py"
     result = subprocess.run(
         ["python3", file],
@@ -54,7 +54,7 @@ def test_cell02_ex01(input, expected):
         ("C", "ACCESS DENIED\n"),
     ],
 )
-def test_cell02_ex02(input, expected):
+async def test_cell02_ex02(input, expected):
     file = "./src/cell02/ex02/password.py"
     result = subprocess.run(
         ["python3", file],
@@ -74,7 +74,7 @@ def test_cell02_ex02(input, expected):
         ("2", "a", "This input is not a number.\n"),
     ],
 )
-def test_cell02_ex03(input1, input2, expected):
+async def test_cell02_ex03(input1, input2, expected):
     file = "./src/cell02/ex03/mult.py"
     result = subprocess.run(
         ["python3", file],

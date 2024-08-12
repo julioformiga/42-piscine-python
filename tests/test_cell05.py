@@ -2,7 +2,7 @@ import subprocess
 import pytest
 
 
-def test_cell05_ex00():
+async def test_cell05_ex00():
     file = "./src/cell05/ex00/create_array.py"
     env = {}
     with open(file) as f:
@@ -12,7 +12,7 @@ def test_cell05_ex00():
     assert result.stdout == str(env.get(vars[1])) + "\n"
 
 
-def test_cell05_ex01():
+async def test_cell05_ex01():
     file = "./src/cell05/ex01/play_with_arrays.py"
     env = {}
     with open(file) as f:
@@ -26,7 +26,7 @@ def test_cell05_ex01():
     assert result.stdout == output, var_list
 
 
-def test_cell05_ex02():
+async def test_cell05_ex02():
     file = "./src/cell05/ex02/play_with_arrays.py"
     env = {}
     with open(file) as f:
@@ -38,7 +38,7 @@ def test_cell05_ex02():
     assert result.stdout == output, var_list
 
 
-def test_cell05_ex03():
+async def test_cell05_ex03():
     file = "./src/cell05/ex03/play_with_arrays.py"
     env = {}
     with open(file) as f:
@@ -51,7 +51,7 @@ def test_cell05_ex03():
     assert result.stdout == output
 
 
-def test_cell05_ex04():
+async def test_cell05_ex04():
     file = "./src/cell05/ex04/parameters.py"
     result = subprocess.run(["python3", file], capture_output=True, text=True)
     msg = "Number of parameters: 0.\n"
@@ -68,7 +68,7 @@ def test_cell05_ex04():
     assert result.stdout == msg
 
 
-def test_cell05_ex05():
+async def test_cell05_ex05():
     file = "./src/cell05/ex05/aff_first_param.py"
     result = subprocess.run(["python3", file], capture_output=True, text=True)
     assert result.stdout == "none\n"
@@ -82,7 +82,7 @@ def test_cell05_ex05():
     assert result.stdout == "one\n"
 
 
-def test_cell05_ex06():
+async def test_cell05_ex06():
     file = "./src/cell05/ex06/upcase_it.py"
     result = subprocess.run(["python3", file], capture_output=True, text=True)
     assert result.stdout == "none\n"
@@ -96,7 +96,7 @@ def test_cell05_ex06():
     assert result.stdout == "none\n"
 
 
-def test_cell05_ex07():
+async def test_cell05_ex07():
     file = "./src/cell05/ex07/downcase_it.py"
     result = subprocess.run(["python3", file], capture_output=True, text=True)
     assert result.stdout == "none\n"
@@ -110,7 +110,7 @@ def test_cell05_ex07():
     assert result.stdout == "none\n"
 
 
-def test_cell05_ex08():
+async def test_cell05_ex08():
     file = "./src/cell05/ex08/aff_rev_params.py"
     result = subprocess.run(["python3", file], capture_output=True, text=True)
     assert result.stdout == "none\n"
@@ -124,7 +124,7 @@ def test_cell05_ex08():
     assert result.stdout == "two\nonE\n"
 
 
-def test_cell05_ex09():
+async def test_cell05_ex09():
     file = "./src/cell05/ex09/scan_it.py"
     result = subprocess.run(["python3", file], capture_output=True, text=True)
     assert result.stdout == "none\n"
@@ -152,7 +152,7 @@ def test_cell05_ex09():
 
 
 @pytest.mark.parametrize("input", ["oNe", "one"])
-def test_cell05_ex10(input):
+async def test_cell05_ex10(input):
     file = "./src/cell05/ex10/parameter_matching.py"
     result = subprocess.run(["python3", file], capture_output=True, text=True)
     assert result.stderr == "none\n"
@@ -171,7 +171,7 @@ def test_cell05_ex10(input):
     assert result.stdout == prompt + expected
 
 
-def test_cell05_ex11():
+async def test_cell05_ex11():
     file = "./src/cell05/ex11/count_it.py"
     result = subprocess.run(["python3", file], capture_output=True, text=True)
     assert result.stderr == "none\n"
@@ -194,7 +194,7 @@ def test_cell05_ex11():
     assert result.stdout == expected
 
 
-def test_cell05_ex12():
+async def test_cell05_ex12():
     file = "./src/cell05/ex12/string_are_arrays.py"
     result = subprocess.run(["python3", file], capture_output=True, text=True)
     assert result.stderr == "none\n"
@@ -216,7 +216,7 @@ def test_cell05_ex12():
     assert result.stdout == "z\n"
 
 
-def test_cell05_ex13():
+async def test_cell05_ex13():
     file = "./src/cell05/ex13/append_it.py"
     result = subprocess.run(["python3", file], capture_output=True, text=True)
     assert result.stderr == "none\n"
@@ -234,7 +234,7 @@ def test_cell05_ex13():
     assert result.stdout == "humanism\n"
 
 
-def test_cell05_ex14():
+async def test_cell05_ex14():
     file = "./src/cell05/ex14/free_range.py"
     result = subprocess.run(["python3", file], capture_output=True, text=True)
     assert result.stderr == "none\n"

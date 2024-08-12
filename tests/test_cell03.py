@@ -11,7 +11,7 @@ import pytest
         ("Wil", "This input is not a number.\n"),
     ],
 )
-def test_cell03_ex00(input, expected):
+async def test_cell03_ex00(input, expected):
     file = "./src/cell03/ex00/to25.py"
     result = subprocess.run(
         ["python3", file],
@@ -38,7 +38,7 @@ def test_cell03_ex00(input, expected):
         ("Wil", "This input is not a number.\n"),
     ],
 )
-def test_cell03_ex01(input, expected):
+async def test_cell03_ex01(input, expected):
     file = "./src/cell03/ex01/multiplication_table.py"
     result = subprocess.run(
         ["python3", file],
@@ -62,7 +62,7 @@ def test_cell03_ex01(input, expected):
         ("Wil", "STOP", "STOP"),
     ],
 )
-def test_cell03_ex02(input1, input2, input3):
+async def test_cell03_ex02(input1, input2, input3):
     file = "./src/cell03/ex02/i_got_that.py"
     result = subprocess.run(
         ["python3", file],
@@ -84,7 +84,7 @@ def test_cell03_ex02(input1, input2, input3):
         (None, ""),
     ],
 )
-def test_cell03_ex03(arg, expected):
+async def test_cell03_ex03(arg, expected):
     file = "./src/cell03/ex03/advanced_mult.py"
     if arg:
         result = subprocess.run(

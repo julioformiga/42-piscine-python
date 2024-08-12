@@ -2,7 +2,7 @@ import subprocess
 import pytest
 
 
-def test_cell01_ex00():
+async def test_cell01_ex00():
     file = "./src/cell01/ex00/name.py"
     env = {}
     with open(file) as f:
@@ -14,7 +14,7 @@ def test_cell01_ex00():
     assert result.stdout == expected
 
 
-def test_cell01_ex01():
+async def test_cell01_ex01():
     file = "./src/cell01/ex01/name.py"
     env = {}
     with open(file) as f:
@@ -27,7 +27,7 @@ def test_cell01_ex01():
     assert result.stdout == expected
 
 
-def test_cell01_ex02():
+async def test_cell01_ex02():
     file = "./src/cell01/ex02/age.py"
     env = {}
     with open(file) as f:
@@ -41,7 +41,7 @@ def test_cell01_ex02():
 @pytest.mark.parametrize(
     "input1, input2", [("Wil", "42"), ("Julio", "Formiga")]
 )
-def test_cell01_ex03(input1, input2):
+async def test_cell01_ex03(input1, input2):
     file = "./src/cell01/ex03/whatsyourname.py"
 
     result = subprocess.run(
